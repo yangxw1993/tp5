@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Goods</title>
+</head>
+<body>
+    <ul>
+        {foreach $list as $item}
+            {if $item['price'] > 100}
+                 <li>{$item['name']} -- {$item['price']}</li>
+            {/if}
+        {/foreach}
+    </ul>
+<ol>
+    {volist name='list' id='v' key='k'}
+        <li>{$k}--{$v['name']}</li>
+    {/volist}
+</ol>
+</body>
+</html>
