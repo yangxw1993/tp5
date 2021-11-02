@@ -4,6 +4,7 @@
 namespace app\controller;
 use think\facade\Db;
 use think\facade\Request;
+use think\response\Json;
 
 class User
 {
@@ -16,8 +17,7 @@ class User
         'code'=>0,
         'data'=>$item
       ];
-      echo json_encode($result);
-//      dump( $item);
+      return Json($result);
     }else{
       return '缺少参数';
     }
