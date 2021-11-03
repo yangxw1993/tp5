@@ -5,6 +5,7 @@ namespace app\controller;
 
 use app\BaseController;
 use think\facade\Db;
+use app\model\User;
 
 class TestMysql extends BaseController
 {
@@ -13,9 +14,11 @@ class TestMysql extends BaseController
     $select = Db::table('user') ->select();
     dump($select);
   }
+//  model 查询
   public function find(){
-    $find = Db::table('user') ->find(2);
-    dump($find);
+    $db = new User();
+    $data = $db->getUser();
+    print_r($data);
   }
   public function add(){
     $data = ['name' => 'bar', 'phone' => '13112345678', 'gender' => 1, 'age' => 30, 'city' => '西安' ];
