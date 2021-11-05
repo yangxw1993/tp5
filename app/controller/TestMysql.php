@@ -14,7 +14,7 @@ class TestMysql extends BaseController
     $select = Db::table('user') ->select();
     dump($select);
   }
-//  model 查询
+//  model 查询 604438441
   public function find(){
     $db = new User();
     $data = $db->getUser();
