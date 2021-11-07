@@ -9,4 +9,8 @@ class Index
     {
         return '您好！这是一个[admin]示例应用';
     }
+  public function login()
+  {
+    return '您好！login';
+  }
 }
