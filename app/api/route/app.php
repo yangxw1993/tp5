@@ -10,5 +10,5 @@
 // +----------------------------------------------------------------------
 use think\facade\Route;
 
-Route::get('login', 'Login/getUsers');
-Route::get('swipers', 'Swiper/getSwipers');
+Route::get('login', 'Login/getUsers')->middleware(\app\middleware\Check::class);
+Route::get('swipers', 'Swiper/getSwipers')->middleware(\app\middleware\Check::class);
