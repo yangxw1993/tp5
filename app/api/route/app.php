@@ -13,3 +13,5 @@ use think\facade\Route;
 Route::get('login', 'Login/getUsers')->middleware(\app\middleware\Check::class);
 Route::get('upload', 'Upload/index');
 Route::get('swipers', 'Swiper/getSwipers')->middleware(\app\middleware\Check::class);
+
+Route::resource('cart', 'Cart');
