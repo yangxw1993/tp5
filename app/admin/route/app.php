@@ -14,3 +14,4 @@ Route::get('think', function () {
     return 'hello,ThinkPHP6!';
 });
 Route::get('login', '/Login/index');
+Route::resource('user', 'User');
