@@ -42,6 +42,27 @@ class User
       ]);
     }
   }
+//  获取用户信息
+  public function info(Request $request){
+    $header = $request->header();
+    $username = $header['token'];
+    if(!isset($username)){
+      return json(['code'=> 401, 'msg'=>'未授权']);
+    }
+    $user = Db::table('admin')->where('username', $username)->find();
+    if(!$user){
+      return json([
+        "code" => 1,
+        "msg" => '用户名不存在，请联系管理员',
+      ]);
+    }
+    $user['roles'] = [$username];
+    return json([
+      "code" => 0,
+      "msg" => 'ok',
+      'data' => $user
+    ]);
+  }
   public function logout(){
     return json([
       "code" => 0,

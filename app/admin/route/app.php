@@ -15,3 +15,9 @@ Route::get('think', function () {
 });
 Route::get('login', '/Login/index');
 Route::resource('user', 'User');
+Route::group('goods', function (){
+  Route::get('list','queryGoods');
+  Route::post('add','addGoods');
+  Route::post('edit','editGoods');
+  Route::delete('remove','removeGoods');
+})->completeMatch()->prefix('goods/');
